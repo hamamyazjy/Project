@@ -59,6 +59,7 @@ public class SignInActivity extends AppCompatActivity {
 
                         Toast.makeText(SignInActivity.this, "Sign In Successfully", Toast.LENGTH_SHORT).show();
                         Intent startMainActivity = new Intent(SignInActivity.this, MainActivity.class);
+                        startMainActivity.putExtra("id",edtId.getText().toString());
                         startActivity(startMainActivity);
 
 
