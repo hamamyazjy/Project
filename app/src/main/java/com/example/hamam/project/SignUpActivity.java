@@ -10,6 +10,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.hamam.project.Model.User;
+import com.example.hamam.project.common.Common;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -37,46 +38,48 @@ public class SignUpActivity extends AppCompatActivity {
         FirebaseDatabase database= FirebaseDatabase.getInstance();
         final DatabaseReference table_use =database.getReference("User");
 
-
-          btnSignUp.setOnClickListener(new View.OnClickListener() {
-              @Override
-              public void onClick(View view) {
-
-                  final ProgressDialog mDialog =new ProgressDialog(SignUpActivity.this);
-                  mDialog.setMessage("Please Wating....");
-                  mDialog.show();
-                  ValueEventListener valueEventListener = table_use.addValueEventListener(new ValueEventListener() {
-                      @Override
-                      public void onDataChange(DataSnapshot dataSnapshot) {
-
-                          //Check if already user id
-                          if (dataSnapshot.child(edtId.getText().toString()).exists()) {
-                              mDialog.dismiss();
-                              Toast.makeText(SignUpActivity.this, "Id is already exist", Toast.LENGTH_SHORT).show();
-
-                          } else {
-                              mDialog.dismiss();
-                              User user = new User(edtId.getText().toString(),edtName.getText().toString(), edtPassword.getText().toString(), edtPhone.getText().toString());
-                              table_use.child(edtId.getText().toString()).setValue(user);
-                              Toast.makeText(SignUpActivity.this, "Sign Up Successfully", Toast.LENGTH_SHORT).show();
-
-
-                              Intent intent =new Intent(SignUpActivity.this,MainActivity.class);
-                              startActivity(intent);
-                              finish();
-
-                          }
-                      }
-
-                      @Override
-                      public void onCancelled(DatabaseError databaseError) {
-                          Toast.makeText(SignUpActivity.this, "Error Register", Toast.LENGTH_SHORT).show();
-                      }
-                  });
-
-              }
-          });
-
-
-    }
+//
+//          btnSignUp.setOnClickListener(new View.OnClickListener() {
+//              @Override
+//              public void onClick(View view) {
+//
+////                  final ProgressDialog mDialog =new ProgressDialog(SignUpActivity.this);
+////                  mDialog.setMessage("Please Wating....");
+////                  mDialog.show();
+////                  ValueEventListener valueEventListener = table_use.addValueEventListener(new ValueEventListener() {
+////                      @Override
+////                      public void onDataChange(DataSnapshot dataSnapshot) {
+////
+////                          //Check if already user id
+////                          if (dataSnapshot.child(edtId.getText().toString()).exists()) {
+////                              mDialog.dismiss();
+////                              Toast.makeText(SignUpActivity.this, "Id is already exist", Toast.LENGTH_SHORT).show();
+////
+////                          } else {
+////                              mDialog.dismiss();
+////                              User user = new User(edtId.getText().toString(),edtName.getText().toString(), edtPassword.getText().toString(), edtPhone.getText().toString());
+////                              Common.user=user;
+////                              table_use.child(edtId.getText().toString()).setValue(user);
+////                              Toast.makeText(SignUpActivity.this, "Sign Up Successfully", Toast.LENGTH_SHORT).show();
+////
+////
+////                              Intent intent =new Intent(SignUpActivity.this,MainActivity.class);
+////                              startActivity(intent);
+////                              finish();
+////
+////                          }
+////                      }
+////
+////                      @Override
+////                      public void onCancelled(DatabaseError databaseError) {
+////                          Toast.makeText(SignUpActivity.this, "Error Register", Toast.LENGTH_SHORT).show();
+////                      }
+////                  });
+////
+////              }
+//          });
+//
+//
+////    }
 }
+    }

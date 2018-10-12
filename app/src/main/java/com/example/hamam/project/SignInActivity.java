@@ -4,6 +4,7 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -17,7 +18,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 public class SignInActivity extends AppCompatActivity {
-
+    private static final String TAG = "SignInActivity";
    EditText edtId, edtPassword;
     Button btnSignIn;
     @Override
@@ -32,7 +33,7 @@ public class SignInActivity extends AppCompatActivity {
 
       //Init Firebase
         FirebaseDatabase database= FirebaseDatabase.getInstance();
-        final DatabaseReference table_use =database.getReference("User");
+        final DatabaseReference table_use =database.getReference("user");
 
         btnSignIn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,22 +55,25 @@ public class SignInActivity extends AppCompatActivity {
                     // Get User information
                     mDialog.dismiss();
                     User user =dataSnapshot.child(edtId.getText().toString()).getValue(User.class);
-                    if(user.getPassword().equals(edtPassword.getText().toString())){
+                    Log.d(TAG, "onDataChange: ");
+                    Log.d(TAG, user.getMarks());
+//          s          if(user.getPassword().equals(edtPassword.getText().toString())){
+//
+//
+//                        Toast.makeText(SignInActivity.this, "Sign In Successfully", Toast.LENGTH_SHORT).show();
+//                        Intent startMainActivity = new Intent(SignInActivity.this, MainActivity.class);
+//                        startMainActivity.putExtra("id",edtId.getText().toString());
+//                        startActivity(startMainActivity);
+//
+//
+//
+//                    }else{
+//
+//                        Toast.makeText(SignInActivity.this, "wrong password!!!", Toast.LENGTH_SHORT).show();
 
 
-                        Toast.makeText(SignInActivity.this, "Sign In Successfully", Toast.LENGTH_SHORT).show();
-                        Intent startMainActivity = new Intent(SignInActivity.this, MainActivity.class);
-                        startMainActivity.putExtra("id",edtId.getText().toString());
-                        startActivity(startMainActivity);
-
-
-
-                    }else{
-
-                        Toast.makeText(SignInActivity.this, "wrong password!!!", Toast.LENGTH_SHORT).show();
-
-
-                    }}else {
+//                    }
+                    }else {
                     mDialog.dismiss();
                     Toast.makeText(SignInActivity.this, "User not exist ", Toast.LENGTH_SHORT).show();
                 }

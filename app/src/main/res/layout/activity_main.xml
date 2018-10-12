@@ -1,17 +1,17 @@
- <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="15dp"
+    android:background="@color/gray"
     tools:context=".SignUpActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
         android:layout_centerInParent="true"
         android:layout_marginLeft="8dp"
-
         android:layout_marginRight="8dp"
         android:orientation="vertical">
 
@@ -30,9 +30,7 @@
             android:layout_height="51dp"
             android:hint="Course Name"
             android:inputType="phone"
-            android:textSize="24sp"
-            />
-
+            android:textSize="24sp" />
 
 
         <EditText
@@ -41,8 +39,7 @@
             android:layout_height="51dp"
             android:hint="Phone"
             android:inputType="phone"
-            android:textSize="24sp"
-            />
+            android:textSize="24sp" />
 
         <EditText
             android:id="@+id/edtFacebook"
@@ -50,10 +47,7 @@
             android:layout_height="51dp"
             android:hint="Facebook Account"
             android:inputType="phone"
-            android:textSize="24sp"
-            />
-
-
+            android:textSize="24sp" />
 
 
         <EditText
@@ -62,48 +56,39 @@
             android:layout_height="51dp"
             android:hint="0"
             android:inputType="textPassword"
-            android:textSize="24sp"
-            />
+            android:textSize="24sp" />
 
         <EditText
             android:id="@+id/edtAttendence"
             android:layout_width="match_parent"
             android:layout_height="51dp"
             android:hint="Attendence"
-             android:textSize="24sp"
-            />
+            android:textSize="24sp" />
 
 
         <EditText
-        android:id="@+id/edtcourse_grade"
-        android:layout_width="match_parent"
-        android:layout_height="51dp"
-        android:hint=" "
-        android:textSize="24sp"
-        />
+            android:id="@+id/edtcourse_grade"
+            android:layout_width="match_parent"
+            android:layout_height="51dp"
+            android:hint=" اكتب دين علاماتك !!"
+            android:textSize="24sp" />
 
         <TextView
             android:id="@+id/tvcourse_grade"
             android:layout_width="match_parent"
             android:layout_height="51dp"
-            android:hint=" "
-            android:textSize="24sp"
-            />
-        <TextView
+            android:hint="Grade"
+            android:textSize="24sp" />
+
+        <EditText
             android:id="@+id/tv_comment"
             android:layout_width="match_parent"
             android:layout_height="51dp"
-            android:hint=" "
-            android:textSize="24sp"
-            />
-
-
-
-
+            android:hint="Comment"
+            android:textSize="24sp" />
 
 
     </LinearLayout>
-
 
 
 </RelativeLayout>
