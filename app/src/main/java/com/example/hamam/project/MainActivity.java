@@ -37,9 +37,9 @@ public class MainActivity extends AppCompatActivity {
         edtcourse=findViewById(R.id.edtcourse);
         edtPhone=findViewById(R.id.edtPhone);
         edtFacebook=findViewById(R.id.edtFacebook);
-        edt=findViewById(R.id.edt);
-        edtAttendence=findViewById(R.id.edtAttendence);
-        edtcourse_grade=findViewById(R.id.edtcourse_grade);
+        edt=findViewById(R.id.edtID);
+        edtAttendence=findViewById(R.id.edtattendence);
+        edtcourse_grade=findViewById(R.id.edtcourse);
         tvcourse_grade=findViewById(R.id.tvcourse_grade);
         tv_comment=findViewById(R.id.tv_comment);
 
