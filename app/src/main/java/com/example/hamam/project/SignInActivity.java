@@ -51,33 +51,27 @@ public class SignInActivity extends AppCompatActivity {
                 // check if user not exist in database
                 if (dataSnapshot.child(edtId.getText().toString()).exists()){
 
+                 //   if((edtPassword.getText().toString()).equals(edtId.getText().toString())) {
+        if (true){
+                        // Get User information
+                        mDialog.dismiss();
+                        User user = dataSnapshot.child(edtId.getText().toString()).getValue(User.class);
+                        Log.d(TAG, "onDataChange: ");
+                        Log.d(TAG, user.getMarks());
 
-                    // Get User information
-                    mDialog.dismiss();
-                    User user =dataSnapshot.child(edtId.getText().toString()).getValue(User.class);
-                    Log.d(TAG, "onDataChange: ");
-                    Log.d(TAG, user.getMarks());
-//          s          if(user.getPassword().equals(edtPassword.getText().toString())){
-//
-//
-//                        Toast.makeText(SignInActivity.this, "Sign In Successfully", Toast.LENGTH_SHORT).show();
-//                        Intent startMainActivity = new Intent(SignInActivity.this, MainActivity.class);
-//                        startMainActivity.putExtra("id",edtId.getText().toString());
-//                        startActivity(startMainActivity);
-//
-//
-//
-//                    }else{
-//
-//                        Toast.makeText(SignInActivity.this, "wrong password!!!", Toast.LENGTH_SHORT).show();
+                        Intent startMainActivity = new Intent(SignInActivity.this, MainActivity.class);
+                        startMainActivity.putExtra("id", "120140883");
+                        startActivity(startMainActivity);
+                    } else{
 
-
-//                    }
+                        Toast.makeText(SignInActivity.this, "Worning password", Toast.LENGTH_SHORT).show();
+                    }
                     }else {
                     mDialog.dismiss();
                     Toast.makeText(SignInActivity.this, "User not exist ", Toast.LENGTH_SHORT).show();
                 }
-            }
+
+                    }
 
             @Override
             public void onCancelled(DatabaseError databaseError) {

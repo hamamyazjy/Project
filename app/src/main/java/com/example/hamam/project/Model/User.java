@@ -3,6 +3,7 @@ package com.example.hamam.project.Model;
 public class User {
 
     public String name;
+    private String id;
     public String coursename;
     public String phone;
     public String fbacoune;
@@ -14,8 +15,9 @@ public class User {
     public User() {
     }
 
-    public User(String name, String coursename, String phone, String fbacoune, String attendence, String marks, String grade, String comment) {
+    public User(String name, String id, String coursename, String phone, String fbacoune, String attendence, String marks, String grade, String comment) {
         this.name = name;
+        this.id = id;
         this.coursename = coursename;
         this.phone = phone;
         this.fbacoune = fbacoune;
@@ -87,5 +89,12 @@ public class User {
 
     public void setComment(String comment) {
         this.comment = comment;
+    }
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 }

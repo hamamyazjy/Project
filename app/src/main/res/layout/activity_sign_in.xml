@@ -20,8 +20,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="ID Number"
-            android:inputType="numberDecimal"
-              android:textSize="24sp"
+             android:textSize="24sp"
 
             />
 
@@ -30,8 +29,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Password"
-             android:inputType="textPassword"
-             android:textSize="24sp"
+            android:inputType="textPassword"
+            android:textSize="24sp"
 
             />
 
