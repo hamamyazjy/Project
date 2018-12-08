@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/backbook"
-    tools:context=".SignInActivity">
+    tools:context=".ChangePassActivity">
 
     <LinearLayout
         android:orientation="vertical"
@@ -17,42 +17,37 @@
         android:layout_height="wrap_content">
 
         <EditText
-            android:id="@+id/edtId"
+            android:id="@+id/edtnewPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="ID Number"
-             android:textSize="24sp"
-            android:textColorHint="@android:color/white"
-
-            />
-
-        <EditText
-            android:id="@+id/edtPassword"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Password"
+            android:hint="New Password"
             android:inputType="textPassword"
             android:textSize="24sp"
             android:textColorHint="@android:color/white"
-
             />
+
+        <EditText
+            android:id="@+id/edtconfiemPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Confirm Password"
+            android:inputType="textPassword"
+            android:textSize="24sp"
+            android:textColorHint="@android:color/white"
+            />
+
+        <Button
+            android:id="@+id/btn_Confirm"
+             style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+            android:shadowColor="@android:color/black"
+            android:text="Confirm"
+            android:textSize="24sp"
+            android:textColor="@android:color/white" />
 
     </LinearLayout>
 
-    <Button
-        android:id="@+id/btnSignIn"
-        style="@style/Widget.AppCompat.Button.Colored"
-        android:layout_width="match_parent"
-        android:layout_marginRight="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_alignParentBottom="true"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:layout_weight="1"
-        android:shadowColor="@android:color/black"
-        android:text="Sign In"
 
-
-        android:textColor="@android:color/white" />
 
 </RelativeLayout>

@@ -44,31 +44,31 @@ public class SignInActivity extends AppCompatActivity {
                 mDialog.setMessage("Please Wating....");
                 mDialog.show();
 
-
                 table_use.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
-                // check if user not exist in database
-                if (dataSnapshot.child(edtId.getText().toString()).exists()){
 
-                 //   if((edtPassword.getText().toString()).equals(edtId.getText().toString())) {
-        if (true){
+
+                // check if user not exist in database
+                 if (dataSnapshot.child(edtId.getText().toString()).exists()) {
+
+                     User user =dataSnapshot.child(edtId.getText().toString()).getValue(User.class);
+
+                   if(user.getPassword().equals(edtPassword.getText().toString())) {
                         // Get User information
-                        mDialog.dismiss();
-                        User user = dataSnapshot.child(edtId.getText().toString()).getValue(User.class);
-                        Log.d(TAG, "onDataChange: ");
+                         mDialog.dismiss();
+                         Log.d(TAG, "onDataChange: ");
                         Log.d(TAG, user.getMarks());
 
                         Intent startMainActivity = new Intent(SignInActivity.this, MainActivity.class);
-                        startMainActivity.putExtra("id", "120140883");
+                        startMainActivity.putExtra("id", edtId.getText().toString());
                         startActivity(startMainActivity);
                     } else{
-
-                        Toast.makeText(SignInActivity.this, "Worning password", Toast.LENGTH_SHORT).show();
+                       Toast.makeText(SignInActivity.this, "Worning password", Toast.LENGTH_SHORT).show();
                     }
                     }else {
                     mDialog.dismiss();
-                    Toast.makeText(SignInActivity.this, "User not exist ", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(SignInActivity.this, "User not exist 2", Toast.LENGTH_SHORT).show();
                 }
 
                     }

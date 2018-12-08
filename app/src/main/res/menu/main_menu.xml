@@ -3,11 +3,16 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
 
+    <item
+        android:title="@string/canghe_password"
+        android:id="@+id/password_main_button"
+        app:showAsAction="never" />
+
 
     <item
-        android:title="Logout"
+        android:title="@string/logout"
         android:id="@+id/logout_main_button"
-        app:showAsAction="never"></item>
+        app:showAsAction="never" />
 
 
 </menu>

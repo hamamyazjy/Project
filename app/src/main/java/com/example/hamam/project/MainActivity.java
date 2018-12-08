@@ -1,6 +1,8 @@
 package com.example.hamam.project;
 
+import android.content.Intent;
 import android.support.annotation.NonNull;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -26,8 +28,8 @@ import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
 
-    EditText edtName,edtcourse,edtPhone,edtFacebook,edtAttendence,edtcourse_grade,edtID;
-    TextView tvcourse_grade , tv_comment;
+    EditText edtName,edtcourse,edtPhone,edtFacebook,edtAttendence,edtcourse_grade;
+    TextView tvcourse_grade , tv_comment,edtID;
     String  user_id;
     Button btn_save;
     private DatabaseReference getUserDataReference;
@@ -61,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
                   String name = dataSnapshot.child("name").getValue().toString();
-                 String id =dataSnapshot.child("id").getValue().toString();
+               //  String id =dataSnapshot.child("id").getValue().toString();
                  String coursename =dataSnapshot.child("coursename").getValue().toString();
                  String phone =dataSnapshot.child("phone").getValue().toString();
                  String fbacoune =dataSnapshot.child("fbacoune").getValue().toString();
@@ -77,8 +79,7 @@ public class MainActivity extends AppCompatActivity {
                 user.setGrade(grade);
                 user.setMarks(marks);
                 user.setCoursename(coursename);
-                user.setId(id);
-                user.setFbacoune(fbacoune);
+                 user.setFbacoune(fbacoune);
                 user.setName(name);
                 Common.user=user;
 
@@ -86,13 +87,13 @@ public class MainActivity extends AppCompatActivity {
 
                 edtName.setText(name);
                 edtcourse.setText(coursename);
-                edtID.setText(id);
+                edtID.setText(getUserDataReference.child(user_id).getKey());
                 edtPhone.setText(phone);
                 edtFacebook.setText(fbacoune);
                 edtAttendence.setText(attendence);
                 edtcourse_grade.setText(marks);
-               tvcourse_grade.setText("Grade:"+ grade);
-                tv_comment.setText("Comment:"+ comment);
+               tvcourse_grade.setText( grade);
+                tv_comment.setText( comment);
             }
 
             @Override
@@ -106,16 +107,17 @@ public class MainActivity extends AppCompatActivity {
         btn_save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 Map<String, Object> map = new HashMap<String, Object>();
 
                 map.put("name", edtName.getText().toString());
-                map.put("id", edtID.getText().toString());
+               // map.put("id", edtID.getText().toString());
                 map.put("coursename", edtcourse.getText().toString());
                 map.put("phone", edtPhone.getText().toString());
                 map.put("attendence", edtAttendence.getText().toString());
                 map.put("marks", edtcourse_grade.getText().toString());
-                map.put("grade", tvcourse_grade.getText().toString());
-                map.put("comment", tv_comment.getText().toString());
+               // map.put("grade", tvcourse_grade.getText().toString());
+               // map.put("comment", tv_comment.getText().toString());
                 map.put("fbacoune", edtFacebook.getText().toString());
                 getUserDataReference.child(user_id).updateChildren(map).addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
@@ -144,7 +146,23 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+
+        if (item.getItemId()==R.id.password_main_button){
+            Intent i = new Intent(getApplicationContext(),ChangePassActivity.class);
+            i.putExtra("user_id",edtID.getText().toString());
+            startActivity(i);
+
+        }
+
+        if (item.getItemId() == R.id.logout_main_button){
+            Intent i = new Intent(MainActivity.this,SignInActivity.class);
+            startActivity(i);
+            finish();
+
+        }
         return super.onOptionsItemSelected(item);
+
+
 
 //        if (item.getItemId()== R.id.logout_main_button)
     }

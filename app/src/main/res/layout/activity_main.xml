@@ -4,194 +4,269 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
      android:background="@color/moathColor"
+    android:layoutDirection="ltr"
     tools:context=".SignUpActivity">
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
 
+    <ScrollView
+        android:gravity="start"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true">
 
 
         <LinearLayout
+            android:layout_gravity="start"
+            android:gravity="start"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_centerInParent="true"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="8dp"
-            android:orientation="vertical">
+             android:layout_marginLeft="8dp"
+             android:orientation="vertical">
 
 
             <TextView
+                android:gravity="start"
                 android:id="@+id/tvName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Name"
-                android:textStyle="bold"
-                android:textColor="@color/colorPrimary"
-                android:textSize="24sp" />
-
-
-            <EditText
-                android:id="@+id/edtName"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="text"
-                android:paddingStart="10dp"
-                android:paddingEnd="10dp"
-                android:background="@drawable/bk_shape"
-                android:textSize="24sp" />
-
-            <TextView
-                android:id="@+id/tvID"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="ID"
-                android:textStyle="bold"
-
-                android:textColor="@color/colorPrimary"
-                android:textSize="24sp" />
-
-
-            <EditText
-                android:id="@+id/edtID"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/bk_shape"
-                android:paddingStart="10dp"
-                android:paddingEnd="10dp"
-                android:inputType="text"
-                android:textSize="24sp" />
-
-            <TextView
-                android:id="@+id/tvcourse"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Course Name"
-                android:textStyle="bold"
-
-                android:textColor="@color/colorPrimary"
-                android:textSize="24sp" />
-
-            <EditText
-                android:id="@+id/edtcourse"
-                android:layout_width="match_parent"
-                android:background="@drawable/bk_shape"
-                android:paddingStart="10dp"
-                android:paddingEnd="10dp"
-                android:layout_height="wrap_content"
-                android:inputType="phone"
-                android:textSize="24sp" />
-
-
-            <TextView
-                android:id="@+id/tvPhone"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Phone"
-                android:textStyle="bold"
-
-                android:textColor="@color/colorPrimary"
-                android:textSize="24sp" />
-
-
-            <EditText
-                android:id="@+id/edtPhone"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/bk_shape"
-                android:paddingStart="10dp"
-                android:paddingEnd="10dp"
-                android:inputType="phone"
-                android:textSize="24sp" />
-
-
-            <TextView
-                android:id="@+id/tvFacebook"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Facebook"
-                android:textStyle="bold"
-
-                android:textColor="@color/colorPrimary"
-                android:textSize="24sp" />
-
-
-            <EditText
-                android:id="@+id/edtFacebook"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/bk_shape"
-                android:paddingStart="10dp"
-                android:paddingEnd="10dp"
-                android:inputType="phone"
-                android:textSize="24sp" />
-
-
-
-            <TextView
-                android:id="@+id/tvattendence"
-                android:layout_width="match_parent"
-                android:textStyle="bold"
-
-                android:layout_height="wrap_content"
-                android:text="Attendence"
-                android:textColor="@color/colorPrimary"
-                android:textSize="24sp" />
-
-            <EditText
-                android:id="@+id/edtattendence"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                 android:background="@drawable/bk_shape"
-                android:paddingStart="10dp"
-                android:paddingEnd="10dp"
-                android:textSize="24sp" />
-
-
-            <TextView
-                android:id="@+id/tv_std_course_grade"
-                android:layout_width="match_parent"
-                android:textStyle="bold"
-
-                android:layout_height="wrap_content"
-                android:text="Course Grade"
-                android:textColor="@color/colorPrimary"
-                android:textSize="24sp" />
-
-            <EditText
-                android:id="@+id/std_course_grade"
-                android:layout_width="match_parent"
-                android:background="@drawable/bk_shape"
-                android:paddingStart="10dp"
-                android:paddingEnd="10dp"
-                android:layout_height="wrap_content"
-                android:textSize="24sp" />
-
-            <TextView
-                android:id="@+id/tvcourse_grade"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="50"
-                android:paddingEnd="10dp"
-                android:paddingStart="10dp"
                 android:textColor="@color/colorPrimary"
                 android:textSize="24sp"
                 android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/tv_comment"
+
+            <EditText
+                android:gravity="start"
+                android:id="@+id/edtName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:clickable="false"
-                android:textStyle="bold"
-                android:paddingStart="10dp"
+                android:background="@drawable/bk_shape"
+                android:inputType="text"
                 android:paddingEnd="10dp"
+                android:paddingStart="10dp"
+                android:textSize="24sp" />
+
+            <TextView
+                android:gravity="start"
+
+                android:id="@+id/tvID"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ID"
                 android:textColor="@color/colorPrimary"
-                android:cursorVisible="false"
-                android:focusable="false"
-                android:focusableInTouchMode="false"
-                android:layout_marginBottom="10dp"
-                android:hint="This is comment from doctor"
-                android:textSize="18sp" />
+
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+
+            <TextView
+                android:gravity="start"
+
+                android:id="@+id/edtID"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bk_shape"
+                android:inputType="text"
+                android:paddingEnd="10dp"
+                android:paddingStart="10dp"
+                android:textSize="24sp" />
+
+            <TextView
+                android:gravity="start"
+
+                android:id="@+id/tvcourse"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Course Name"
+                android:textColor="@color/colorPrimary"
+
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:gravity="start"
+
+                android:id="@+id/edtcourse"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bk_shape"
+                android:inputType="phone"
+                android:paddingEnd="10dp"
+                android:paddingStart="10dp"
+                android:textSize="24sp" />
+
+
+            <TextView
+                android:gravity="start"
+
+                android:id="@+id/tvPhone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Phone"
+                android:textColor="@color/colorPrimary"
+
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+
+            <EditText
+                android:gravity="start"
+
+                android:id="@+id/edtPhone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bk_shape"
+                android:inputType="phone"
+                android:paddingEnd="10dp"
+                android:paddingStart="10dp"
+                android:textSize="24sp" />
+
+
+            <TextView
+                android:gravity="start"
+
+                android:id="@+id/tvFacebook"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Facebook"
+                android:textColor="@color/colorPrimary"
+
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+
+            <EditText
+                android:gravity="start"
+
+                android:id="@+id/edtFacebook"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bk_shape"
+                android:inputType="phone"
+                android:paddingEnd="10dp"
+                android:paddingStart="10dp"
+                android:textSize="24sp" />
+
+
+            <TextView
+                android:gravity="start"
+
+                android:id="@+id/tvattendence"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:text="Attendence"
+                android:textColor="@color/colorPrimary"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:gravity="start"
+
+                android:id="@+id/edtattendence"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bk_shape"
+                android:paddingEnd="10dp"
+                android:paddingStart="10dp"
+                android:textSize="24sp" />
+
+
+
+            <TextView
+                android:gravity="start"
+
+                android:id="@+id/tv_std_course_grade"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:text="Course Grade"
+                android:textColor="@color/colorPrimary"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:gravity="start"
+
+                android:id="@+id/std_course_grade"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bk_shape"
+                android:paddingEnd="10dp"
+                android:paddingStart="10dp"
+                android:textSize="24sp" />
+             <LinearLayout
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content">
+
+                 <TextView
+                     android:gravity="start"
+
+                      android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:paddingEnd="10dp"
+                     android:paddingStart="10dp"
+                     android:text="Grade :"
+                     android:textColor="@color/colorPrimary"
+                     android:textSize="24sp"
+                     android:textStyle="bold" />
+
+                 <TextView
+                     android:gravity="start"
+                     android:id="@+id/tvcourse_grade"
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:paddingEnd="10dp"
+                     android:paddingStart="10dp"
+                     android:textColor="@color/colorPrimary"
+                     android:textSize="24sp"
+                     android:textStyle="bold" />
+
+
+
+             </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content">
+
+                <TextView
+                     android:gravity="start"
+                     android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:clickable="false"
+                    android:cursorVisible="false"
+                    android:text="Comment :"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:paddingEnd="10dp"
+                    android:paddingStart="10dp"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:gravity="start"
+                    android:id="@+id/tv_comment"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:clickable="false"
+                    android:cursorVisible="false"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:paddingEnd="10dp"
+                    android:paddingStart="10dp"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+
+            </LinearLayout>
+
 
 
             <Button
@@ -202,7 +277,6 @@
                 android:background="@drawable/bk_shape"
                 android:text="Save"
                 android:textColor="@color/colorPrimary"
-
                 android:textSize="24sp" />
         </LinearLayout>
 

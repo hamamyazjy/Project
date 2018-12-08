@@ -11,11 +11,20 @@ public class User {
     public String marks;
     public String grade;
     public String comment;
+    public  String password ;
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
 
     public User() {
     }
 
-    public User(String name, String id, String coursename, String phone, String fbacoune, String attendence, String marks, String grade, String comment) {
+    public User(String name, String id, String coursename, String phone, String fbacoune, String attendence, String marks, String grade, String comment, String password) {
         this.name = name;
         this.id = id;
         this.coursename = coursename;
@@ -25,6 +34,7 @@ public class User {
         this.marks = marks;
         this.grade = grade;
         this.comment = comment;
+        this.password = password;
     }
 
     public String getName() {
