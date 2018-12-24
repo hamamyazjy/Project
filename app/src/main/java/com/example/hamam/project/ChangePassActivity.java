@@ -49,7 +49,7 @@ public class ChangePassActivity extends AppCompatActivity {
 
         }
         database =FirebaseDatabase.getInstance();
-        reference = database.getReference().child("user").child(user_id);
+        reference = database.getReference().child("User").child(user_id);
 
         btn_confirm.setOnClickListener(new View.OnClickListener() {
             @Override

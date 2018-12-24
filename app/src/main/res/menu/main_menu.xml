@@ -4,6 +4,12 @@
 
 
     <item
+        android:title="My Location"
+        android:id="@+id/loc_button"
+        app:showAsAction="never" />
+
+
+    <item
         android:title="@string/canghe_password"
         android:id="@+id/password_main_button"
         app:showAsAction="never" />

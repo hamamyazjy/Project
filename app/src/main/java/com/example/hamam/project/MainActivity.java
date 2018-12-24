@@ -1,10 +1,12 @@
 package com.example.hamam.project;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -15,6 +17,8 @@ import android.widget.Toast;
 
 import com.example.hamam.project.Model.User;
 import com.example.hamam.project.common.Common;
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.GoogleApiAvailability;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DataSnapshot;
@@ -41,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
 
         //Firebase
         FirebaseDatabase database= FirebaseDatabase.getInstance();
-        getUserDataReference =database.getReference().child("user");
+        getUserDataReference =database.getReference().child("User");
 
 
         btn_save=findViewById(R.id.btn_save);
@@ -55,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
         tvcourse_grade=findViewById(R.id.tvcourse_grade);
         tv_comment=findViewById(R.id.tv_comment);
 
-        user_id =getIntent().getStringExtra( "id");
+        user_id =getIntent().getStringExtra( "user_id");
 
 
         getUserDataReference.child(user_id).addValueEventListener(new ValueEventListener() {
@@ -71,6 +75,7 @@ public class MainActivity extends AppCompatActivity {
                  String marks =dataSnapshot.child("marks").getValue().toString();
                  String grade =dataSnapshot.child("grade").getValue().toString();
                   String comment =dataSnapshot.child("comment").getValue().toString();
+
 
                 User user= new User();
                 user.setAttendence(attendence);
@@ -160,10 +165,38 @@ public class MainActivity extends AppCompatActivity {
             finish();
 
         }
+        if (item.getItemId()==R.id.loc_button){
+            if (isServicesOK()) {
+                Intent i = new Intent(getApplicationContext(), MapActivity.class);
+                i.putExtra("user_id", edtID.getText().toString());
+                startActivity(i);
+            }
+
+        }
+
+
         return super.onOptionsItemSelected(item);
 
 
 
-//        if (item.getItemId()== R.id.logout_main_button)
     }
+
+    public boolean isServicesOK(){
+
+        int available = GoogleApiAvailability.getInstance().isGooglePlayServicesAvailable(MainActivity.this);
+
+        if(available == ConnectionResult.SUCCESS){
+            //everything is fine and the user can make map requests
+             return true;
+        }
+        else if(GoogleApiAvailability.getInstance().isUserResolvableError(available)){
+            //an error occured but we can resolve it
+             Dialog dialog = GoogleApiAvailability.getInstance().getErrorDialog(MainActivity.this, available, 00);
+            dialog.show();
+        }else{
+            Toast.makeText(this, "You can't make map requests", Toast.LENGTH_SHORT).show();
+        }
+        return false;
+    }
+
 }
