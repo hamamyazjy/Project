@@ -4,6 +4,12 @@
 
 
     <item
+        android:title="Task"
+        android:id="@+id/task_btn"
+        app:showAsAction="never" />
+
+
+    <item
         android:title="My Location"
         android:id="@+id/loc_button"
         app:showAsAction="never" />

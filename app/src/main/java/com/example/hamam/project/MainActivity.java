@@ -158,6 +158,12 @@ public class MainActivity extends AppCompatActivity {
             startActivity(i);
 
         }
+        if (item.getItemId()==R.id.task_btn){
+            Intent i = new Intent(getApplicationContext(),NoteActivity.class);
+            i.putExtra("user_id",edtID.getText().toString());
+            startActivity(i);
+
+        }
 
         if (item.getItemId() == R.id.logout_main_button){
             Intent i = new Intent(MainActivity.this,SignInActivity.class);
